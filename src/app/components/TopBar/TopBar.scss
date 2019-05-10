@@ -1,0 +1,149 @@
+@import "../../../assets/css/standards";
+
+.topBarContainer {
+  .search {
+    position: relative;
+    width: $sub-menu-width;
+    border-radius: 20px;
+    background: $background-color;
+
+    input {
+      border: initial;
+      background: transparent;
+      outline: initial !important;
+      padding: 0.5rem 1rem;
+      line-height: 2;
+      font-size: 0.8rem;
+      width: 93%;
+      color: $primary-color;
+    }
+
+    .search-icon {
+      font-size: 17px;
+      border-radius: 10px;
+      color: $secondary-color;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      bottom: -8px;
+      right: 3px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        color: $theme-color-1;
+      }
+    }
+
+    @include respond-below(md) {
+      width: $sub-menu-width/2;
+      input {
+        width: 85%;
+      }
+    }
+
+    @include respond-below(sm) {
+      width: 30px;
+      height: 30px;
+      background: initial;
+      margin-left: 0.6rem;
+      color: rgba($primary-color, 0.7);
+
+      input {
+        display: none;
+      }
+
+      .search-icon {
+        font-size: 17px;
+        width: 30px;
+        height: 30px;
+        bottom: -3px;
+        right: 0;
+        color: inherit;
+      }
+
+      &.mobile-view {
+        display: block;
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+        background: $foreground-color;
+        left: 0;
+        top: 0;
+        height: $navbar-height-xs;
+        margin-left: 15px;
+
+        input {
+          display: block;
+          width: 100%;
+          height: 70px;
+          padding-left: 0;
+        }
+
+        span {
+          top: 50%;
+          transform: translateY(-50%);
+          right: 25px;
+        }
+      }
+    }
+  }
+
+  .menu-button {
+    color: $secondary-color;
+    width: $main-menu-width;
+    text-align: center;
+
+    svg {
+      height: 12px;
+    }
+
+    .main {
+      fill: $primary-color;
+      transition: fill $menu-collapse-time;
+    }
+
+    .sub {
+      fill: $primary-color;
+      transition: fill $menu-collapse-time;
+    }
+
+    &:hover {
+      color: $theme-color-1;
+    }
+
+    @include respond-below(sm) {
+      width: 60px;
+    }
+  }
+
+  .navbar-logo {
+    width: 110px;
+    height: 35px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      background: url("http://auth.atskill.com/static/media/@skill.00156bf6.png") no-repeat;
+      background-position: center center;
+    }
+
+    .logo-mobile {
+      width: 100%;
+      height: 100%;
+      background: url("http://auth.atskill.com/static/media/@skill.00156bf6.png") no-repeat;
+      background-position: center center;
+    }
+
+    @include respond-below(sm) {
+      width: 80px;
+    }
+
+    @include respond-below(xxs) {
+      width: 20px;
+    }
+  }
+}
